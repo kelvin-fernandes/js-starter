@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM manipulating</title>
+  </head>
+  <body>
+    <input type="text" name="name" />
+    <button onClick="add()">Adicionar</button>
+    <ul id="usersList"></ul>
+    <script>
+      function add() {
+        let nameInput = document.getElementsByName("name")[0];
+        addListItem(nameInput.value);
+        nameInput.value = "";
+      }
+
+      let usersList = document.getElementById("usersList");
+
+      function addListItem(content) {
+        let li = document.createElement("li");
+        let textNode = document.createTextNode(content);
+
+        li.appendChild(textNode);
+        usersList.appendChild(li);
+      }
+
+      var names = ["Diego", "Gabriel", "Lucas"];
+
+      for (var name of names) {
+        addListItem(name);
+      }
+    </script>
+  </body>
+</html>
