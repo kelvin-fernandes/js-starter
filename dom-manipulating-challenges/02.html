@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM manipulating</title>
+  </head>
+  <body>
+    <button onclick="createNewRedBox()">Create new box</button>
+    <div id="boxes"></div>
+    <script>
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      function createNewRedBox() {
+        console.log("creating new box...");
+        let box = document.createElement("div");
+        box.style.width = "100px";
+        box.style.height = "100px";
+        box.style.backgroundColor = "#000";
+        box.onmouseover = () => {
+          box.style.backgroundColor = getRandomColor();
+        };
+
+        let boxes = document.getElementById("boxes");
+        boxes.appendChild(box);
+      }
+    </script>
+  </body>
+</html>
