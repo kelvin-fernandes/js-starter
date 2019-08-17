@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM manipulating</title>
+  </head>
+  <body>
+    <button onclick="createNewRedBox()">Create new box</button>
+    <div id="boxes"></div>
+    <script>
+      function createNewRedBox() {
+        console.log("creating new box...");
+        let box = document.createElement("div");
+        box.style.width = "100px";
+        box.style.height = "100px";
+        box.style.backgroundColor = "#000";
+
+        let boxes = document.getElementById("boxes");
+        boxes.appendChild(box);
+      }
+    </script>
+  </body>
+</html>
+
+<!-- Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+aparecer na tela. -->
