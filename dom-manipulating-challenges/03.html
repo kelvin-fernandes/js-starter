@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM manipulating</title>
+  </head>
+  <body>
+    <ul id="usersList"></ul>
+    <script>
+      var names = ["Diego", "Gabriel", "Lucas"];
+
+      let usersList = document.getElementById("usersList");
+
+      for (var name of names) {
+        let li = document.createElement("li");
+        let textNode = document.createTextNode(name);
+
+        li.appendChild(textNode);
+        usersList.appendChild(li);
+      }
+    </script>
+  </body>
+</html>
